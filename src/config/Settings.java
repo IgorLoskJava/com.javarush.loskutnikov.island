@@ -15,11 +15,11 @@ public class Settings {
     static int weightBoa = 15;
     static int speedMoveBoa = 1;
     static double eatMaxBoa = 3;
-    static int BoaMaxValue = 30;
+    static int boaMaxValue = 30;
 
     static int weightHorse = 400;
     static int speedMoveHorse = 4;
     static double eatMaxHorse = 60;
-    static int HorseMaxValue = 20;
+    static int horseMaxValue = 20;
 
 }

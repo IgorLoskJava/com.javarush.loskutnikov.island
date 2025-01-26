@@ -9,7 +9,7 @@ public class Menu {
         System.out.println("Добро пожаловать на остров!");
         System.out.println("Введите параметры для симуляции острова:");
         Scanner userInput = new Scanner(System.in);
-        System.out.println("Введите количество локаций на острове (от 1 до 3):");
+        System.out.println("Введите количество локаций на острове (от 1 до 2):");
         inputParameters[0] = userInput.nextInt();
         System.out.println("Введите ширину каждой локации (от 1 до 100):");
         inputParameters[1] = userInput.nextInt();

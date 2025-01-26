@@ -1,4 +1,6 @@
 package entity.herbivores;
 
-public class Herbivores {
+import entity.Organism;
+
+public class Herbivores extends Organism {
 }

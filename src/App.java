@@ -1,25 +1,35 @@
 import config.CreateWorld;
 import config.Menu;
 import entity.Organism;
+import entity.herbivores.Horse;
+import entity.predators.Wolf;
+import view.View;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 
 public class App {
     public static void main(String[] args) {
         int[] startParameters = Menu.start();
         CreateWorld createWorld = new CreateWorld();
+        List<Organism> location1 = null;
+        List<Organism> location2 = null;
+
         if (startParameters[0] == 1) {
-            List<Organism> location1 = createWorld.createLocation(startParameters);
+            location1 = createWorld.createLocation(startParameters);
+            View.statistic(location1, 1);
         } else if (startParameters[0] == 2) {
-            List<Organism> location1 = createWorld.createLocation(startParameters);
-            List<Organism> location2 = createWorld.createLocation(startParameters);
-        } else if (startParameters[0] == 3) {
-            List<Organism> location1 = createWorld.createLocation(startParameters);
-            List<Organism> location2 = createWorld.createLocation(startParameters);
-            List<Organism> location3 = createWorld.createLocation(startParameters);
+            location1 = createWorld.createLocation(startParameters);
+            location2 = createWorld.createLocation(startParameters);
+            View.statistic(location1, 1);
+            View.statistic(location2, 2);
         }
 
+        location1.stream().forEach(organism -> organism.move(startParameters));
+        if (location2 != null) {
+            location2.stream().forEach(organism -> organism.move(startParameters));
+        }
 
     }
 }
