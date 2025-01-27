@@ -1,5 +1,6 @@
 import config.CreateWorld;
 import config.Menu;
+import config.Task;
 import entity.Organism;
 import entity.herbivores.Horse;
 import entity.predators.Wolf;
@@ -26,10 +27,8 @@ public class App {
             View.statistic(location2, 2);
         }
 
-        location1.stream().forEach(organism -> organism.move(startParameters));
-        if (location2 != null) {
-            location2.stream().forEach(organism -> organism.move(startParameters));
-        }
+        Task.moveAll(location1, startParameters);
+
 
     }
 }
