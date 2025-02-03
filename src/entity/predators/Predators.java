@@ -51,4 +51,14 @@ public class Predators extends Organism {
 
         }
     }
+    @Override
+    public void eat(Organism predator, List<Organism> herb) {
+        for (int i = 0; i < herb.size(); i++) {
+            if (predator.cell == herb.get(i).cell && predator.x == herb.get(i).x && predator.y == herb.get(i).y) {
+                herb.remove(i);
+                System.out.println("Eated herb");
+                break;
+            }
+        }
+    }
 }

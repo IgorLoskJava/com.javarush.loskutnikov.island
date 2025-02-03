@@ -1,5 +1,8 @@
 package entity.herbivores;
 
+import config.MoveDirection;
+import entity.Organism;
+
 public class Rabbit extends Herbivores {
     public Rabbit(int cell, int x, int y, double weight, int speedMove, double eatMax) {
         super.cell = cell;
@@ -12,7 +15,7 @@ public class Rabbit extends Herbivores {
 
     @Override
     public String toString() {
-        return "Wolf{" +
+        return "Rabbit{" +
                 "x=" + x +
                 ", y=" + y +
                 ", weight=" + weight +
@@ -21,4 +24,5 @@ public class Rabbit extends Herbivores {
                 ", cell=" + cell +
                 '}';
     }
+
 }

@@ -21,5 +21,17 @@ public class Task {
 
     }
 
+    public static void eating(List<Organism> predator, List<Organism> herb) {
+        Predators predators = new Predators();
+        Herbivores herbivores = new Herbivores();
 
+        for (int i = 0; i < predator.size(); i++) {
+            predators.eat(predator.get(i), herb);
+        }
+
+        for (int i = 0; i < predator.size(); i++) {
+            herbivores.eat(predator.get(i), herb);
+        }
+
+    }
 }

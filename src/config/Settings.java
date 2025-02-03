@@ -82,5 +82,6 @@ public class Settings {
 
     static double weightGrass = 1;
     static int maxValueGrass = 200;
+    static String grassIcon = "\uD83C\uDF3F";
 
 }

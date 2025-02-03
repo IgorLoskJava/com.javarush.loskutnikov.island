@@ -13,7 +13,7 @@ public class Fox extends Predators {
 
     @Override
     public String toString() {
-        return "Wolf{" +
+        return "Fox{" +
                 "x=" + x +
                 ", y=" + y +
                 ", weight=" + weight +

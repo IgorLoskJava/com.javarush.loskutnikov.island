@@ -3,6 +3,8 @@ package entity.herbivores;
 import config.MoveDirection;
 import entity.Organism;
 
+import java.util.List;
+
 
 public class Herbivores extends Organism {
 
@@ -48,6 +50,17 @@ public class Herbivores extends Organism {
                 organisms.cell = 1;
             }
 
+        }
+    }
+
+    @Override
+    public void eat(Organism predator, List<Organism> herb) {
+        for (int i = 0; i < herb.size(); i++) {
+            if (predator.cell == herb.get(i).cell && predator.x == herb.get(i).x && predator.y == herb.get(i).y) {
+                System.out.println("Eated Grass");
+                herb.remove(i);
+                break;
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package config;
 
 import entity.Organism;
 import entity.herbivores.Rabbit;
+import entity.plants.Grass;
 import entity.predators.Fox;
 import entity.predators.Wolf;
 
@@ -45,6 +46,16 @@ public class CreateWorld {
             }
         }
         return herbivoresList;
+    }
+
+    public static List<Organism> plantsCreate (){
+        List<Organism> plantList = new CopyOnWriteArrayList<>();
+        for (int i = 0; i < maxCell; i++) {
+            for (int j = 0; j < rnd.nextInt(Settings.maxValueGrass); j++) {
+                plantList.add(new Grass(i, rnd.nextInt(width), rnd.nextInt(height)));
+            }
+        }
+        return plantList;
     }
 
 }

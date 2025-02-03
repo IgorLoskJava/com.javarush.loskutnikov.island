@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 public abstract class Organism {
     public int x;
     public int y;
@@ -9,4 +11,5 @@ public abstract class Organism {
     public int cell;
 
     public void move(Organism organisms){};
+    public void eat(Organism predator, List<Organism> herb){}
 }
