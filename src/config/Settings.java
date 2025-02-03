@@ -6,11 +6,13 @@ public class Settings {
     static int speedMoveWolf = 3;
     static double eatMaxWolf = 8;
     static int maxValueWolf = 30;
+    static String wolfIcon = "\uD83D\uDC3A";
 
     static double weightRabbit = 2;
     static int speedMoveRabbit = 2;
     static double eatMaxRabbit = 0.45;
     static int maxValueRabbit = 150;
+    static String rabbitIcon = "\uD83D\uDC07";
 
     static double weightBoa = 15;
     static int speedMoveBoa = 1;
@@ -76,5 +78,9 @@ public class Settings {
     static int speedMoveFox = 2;
     static double eatMaxFox = 2;
     static int maxValueFox = 30;
+    static String foxIcon = "\uD83E\uDD8A";
+
+    static double weightGrass = 1;
+    static int maxValueGrass = 200;
 
 }

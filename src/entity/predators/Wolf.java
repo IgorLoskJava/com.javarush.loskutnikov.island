@@ -1,17 +1,21 @@
 package entity.predators;
 
-import java.util.Random;
+import config.MoveDirection;
+import config.Settings;
+import entity.Organism;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Wolf extends Predators {
 
-
-    public Wolf(int x, int y, double weight, int speedMove, double eatMax) {
+    public Wolf(int cell, int x, int y, double weight, int speedMove, double eatMax) {
+        super.cell = cell;
         super.x = x;
         super.y = y;
         super.weight = weight;
         super.speedMove = speedMove;
         super.eatMax = eatMax;
-
     }
 
     @Override
@@ -22,7 +26,8 @@ public class Wolf extends Predators {
                 ", weight=" + weight +
                 ", speedMove=" + speedMove +
                 ", eatMax=" + eatMax +
-                ", probability=" + probability +
+                ", cell=" + cell +
                 '}';
     }
+
 }

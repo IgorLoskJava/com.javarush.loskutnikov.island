@@ -1,12 +1,8 @@
 package entity.herbivores;
 
-import entity.Organism;
-
-import java.util.Random;
-
 public class Rabbit extends Herbivores {
-
-    public Rabbit(int x, int y, double weight, int speedMove, double eatMax) {
+    public Rabbit(int cell, int x, int y, double weight, int speedMove, double eatMax) {
+        super.cell = cell;
         super.x = x;
         super.y = y;
         super.weight = weight;
@@ -16,13 +12,13 @@ public class Rabbit extends Herbivores {
 
     @Override
     public String toString() {
-        return "Rabbit{" +
+        return "Wolf{" +
                 "x=" + x +
                 ", y=" + y +
                 ", weight=" + weight +
                 ", speedMove=" + speedMove +
                 ", eatMax=" + eatMax +
-                ", probability=" + probability +
+                ", cell=" + cell +
                 '}';
     }
 }
