@@ -21,17 +21,23 @@ public class Task {
 
     }
 
-    public static void eating(List<Organism> predator, List<Organism> herb) {
-        Predators predators = new Predators();
-        Herbivores herbivores = new Herbivores();
+    public static void predatorsEat(List<Organism> predator, List<Organism> herb) {
+        Organism predators = new Predators();
 
         for (int i = 0; i < predator.size(); i++) {
             predators.eat(predator.get(i), herb);
         }
 
-        for (int i = 0; i < predator.size(); i++) {
-            herbivores.eat(predator.get(i), herb);
+    }
+
+    public static void herbEat(List<Organism> herb, List<Organism> grass) {
+        Organism herbivores = new Herbivores();
+
+        for (int i = 0; i < herb.size(); i++) {
+            herbivores.eat(herb.get(i), grass);
         }
 
     }
+
+
 }

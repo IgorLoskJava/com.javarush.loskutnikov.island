@@ -1,13 +1,8 @@
 import config.CreateWorld;
-import config.MoveDirection;
 import config.PrintStatistic;
 import config.Task;
 import entity.Organism;
-import entity.herbivores.Herbivores;
-import entity.predators.Predators;
-import entity.predators.Wolf;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class App {
@@ -20,8 +15,8 @@ public class App {
             PrintStatistic.printAll(predatorList, herbivoresList, grassList, i);
         }
         for (int j = 0; j < 10; j++) {
-            Task.eating(herbivoresList, grassList);
-            //Task.eating(predatorList, herbivoresList);
+            Task.predatorsEat(predatorList, herbivoresList);
+            Task.herbEat(herbivoresList, grassList);
             Task.moveAll(predatorList, herbivoresList);
         }
         for (int i = 0; i < 3; i++) {
