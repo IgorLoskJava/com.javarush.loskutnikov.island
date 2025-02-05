@@ -1,6 +1,7 @@
 package entity.herbivores;
 
 import config.MoveDirection;
+import config.Settings;
 import entity.Organism;
 
 import java.util.List;
@@ -54,12 +55,37 @@ public class Herbivores extends Organism {
     }
 
     @Override
-    public void eat(Organism predator, List<Organism> herb) {
-        for (int i = 0; i < herb.size(); i++) {
-            if (predator.cell == herb.get(i).cell && predator.x == herb.get(i).x && predator.y == herb.get(i).y) {
-                System.out.println("Eated Grass");
-                herb.remove(i);
+    public void eat(Organism herbivore, List<Organism> grass) {
+        herbivore.eatCount = herbivore.eatCount - 1;
+        for (int i = 0; i < grass.size(); i++) {
+            if (herbivore.cell == grass.get(i).cell
+                    && herbivore.x == grass.get(i).x && herbivore.y == grass.get(i).y) {
+                grass.remove(i);
+                herbivore.eatCount = 2;
+                //System.out.println("Grass eated");
                 break;
+            }
+
+        }
+
+    }
+
+    @Override
+    public Organism spawn(Organism herb, List<Organism> herbList) {
+        for (int i = 0; i < herbList.size(); i++) {
+            if (herb.cell == herbList.get(i).cell && herb.x == herbList.get(i).x && herb.y == herbList.get(i).y) {
+                //System.out.println("Herbivores spawn");
+                return herb;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void die(List<Organism> herb) {
+        for (int i = 0; i < herb.size(); i++) {
+            if (herb.get(i).eatCount == 0) {
+                herb.remove(i);
             }
         }
     }

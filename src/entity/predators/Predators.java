@@ -4,6 +4,8 @@ import config.MoveDirection;
 import entity.Organism;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Predicate;
 
 public class Predators extends Organism {
 
@@ -51,14 +53,42 @@ public class Predators extends Organism {
 
         }
     }
+
     @Override
-    public void eat(Organism predator, List<Organism> herb) {
-        for (int i = 0; i < herb.size(); i++) {
-            if (predator.cell == herb.get(i).cell && predator.x == herb.get(i).x && predator.y == herb.get(i).y) {
-                herb.remove(i);
-                System.out.println("Eated herb");
+    public void eat(Organism predator, List<Organism> herbivores) {
+        predator.eatCount = predator.eatCount - 1;
+        for (int i = 0; i < herbivores.size(); i++) {
+            if (predator.cell == herbivores.get(i).cell
+                    && predator.x == herbivores.get(i).x && predator.y == herbivores.get(i).y) {
+                herbivores.remove(i);
+                predator.eatCount = 2;
+                //System.out.println("Herb eated" + predator.eatCount);
                 break;
+            }
+
+        }
+
+    }
+
+    @Override
+    public Organism spawn(Organism predator, List<Organism> predatorList) {
+        for (int i = 0; i < predatorList.size(); i++) {
+            if (predator.cell == predatorList.get(i).cell && predator.x == predatorList.get(i).x && predator.y == predatorList.get(i).y) {
+                //System.out.println("Predator spawn");
+                return predator;
+            }
+
+        }
+        return predator;
+    }
+
+    @Override
+    public void die(List<Organism> predator) {
+        for (int i = 0; i < predator.size(); i++) {
+            if (predator.get(i).eatCount == 0) {
+                predator.remove(i);
             }
         }
     }
+
 }

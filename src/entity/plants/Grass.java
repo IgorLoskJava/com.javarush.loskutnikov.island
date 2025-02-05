@@ -1,6 +1,10 @@
 package entity.plants;
 
+import config.Settings;
 import entity.Organism;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Grass extends Organism {
     public Grass(int cell, int x, int y) {
@@ -17,4 +21,6 @@ public class Grass extends Organism {
                 ", cell=" + cell +
                 '}';
     }
+
+
 }

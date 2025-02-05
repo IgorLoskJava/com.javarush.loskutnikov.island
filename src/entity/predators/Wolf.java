@@ -6,16 +6,17 @@ import entity.Organism;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Wolf extends Predators {
 
-    public Wolf(int cell, int x, int y, double weight, int speedMove, double eatMax) {
+    public Wolf(int cell, int x, int y, double weight, int speedMove, int eatCount) {
         super.cell = cell;
         super.x = x;
         super.y = y;
         super.weight = weight;
         super.speedMove = speedMove;
-        super.eatMax = eatMax;
+        super.eatCount = eatCount;
     }
 
     @Override
@@ -23,11 +24,10 @@ public class Wolf extends Predators {
         return "Wolf{" +
                 "x=" + x +
                 ", y=" + y +
-                ", weight=" + weight +
-                ", speedMove=" + speedMove +
-                ", eatMax=" + eatMax +
                 ", cell=" + cell +
+                ", eatCount=" + eatCount +
                 '}';
     }
+
 
 }

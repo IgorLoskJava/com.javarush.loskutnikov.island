@@ -3,17 +3,16 @@ package entity.herbivores;
 import config.MoveDirection;
 import entity.Organism;
 
+import java.util.List;
+
 public class Rabbit extends Herbivores {
-    public Rabbit(int cell, int x, int y, double weight, int speedMove, double eatMax) {
+    public Rabbit(int cell, int x, int y, double weight, int speedMove, int eatCount) {
         super.cell = cell;
         super.x = x;
         super.y = y;
         super.weight = weight;
         super.speedMove = speedMove;
-        super.eatMax = eatMax;
-    }
-
-    public Rabbit() {
+        super.eatCount = eatCount;
     }
 
     @Override
@@ -21,11 +20,8 @@ public class Rabbit extends Herbivores {
         return "Rabbit{" +
                 "x=" + x +
                 ", y=" + y +
-                ", weight=" + weight +
-                ", speedMove=" + speedMove +
-                ", eatMax=" + eatMax +
                 ", cell=" + cell +
+                ", eatCount=" + eatCount +
                 '}';
     }
-
 }

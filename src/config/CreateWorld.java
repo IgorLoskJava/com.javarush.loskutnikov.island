@@ -1,8 +1,10 @@
 package config;
 
 import entity.Organism;
+import entity.herbivores.Mouse;
 import entity.herbivores.Rabbit;
 import entity.plants.Grass;
+import entity.predators.Eagle;
 import entity.predators.Fox;
 import entity.predators.Wolf;
 
@@ -24,14 +26,21 @@ public class CreateWorld {
         for (int i = 0; i < maxCell; i++) {
             for (int j = 0; j < rnd.nextInt(Settings.maxValueWolf); j++) {
                 predatorsList.add(new Wolf(i, rnd.nextInt(width)
-                        , rnd.nextInt(height), Settings.weightWolf, Settings.speedMoveWolf, Settings.eatMaxWolf));
+                        , rnd.nextInt(height), Settings.weightWolf, Settings.speedMoveWolf, Settings.eatCount));
             }
         }
 
         for (int i = 0; i < maxCell; i++) {
             for (int j = 0; j < rnd.nextInt(Settings.maxValueFox); j++) {
                 predatorsList.add(new Fox(i, rnd.nextInt(width)
-                        , rnd.nextInt(height), Settings.weightFox, Settings.speedMoveFox, Settings.eatMaxFox));
+                        , rnd.nextInt(height), Settings.weightFox, Settings.speedMoveFox, Settings.eatCount));
+            }
+        }
+
+        for (int i = 0; i < maxCell; i++) {
+            for (int j = 0; j < rnd.nextInt(Settings.maxValueEagle); j++) {
+                predatorsList.add(new Eagle(i, rnd.nextInt(width)
+                        , rnd.nextInt(height), Settings.weightEagle, Settings.speedMoveEagle, Settings.eatCount));
             }
         }
 
@@ -39,12 +48,21 @@ public class CreateWorld {
     }
     public static List<Organism> herbivoresCreate (){
         List<Organism> herbivoresList = new CopyOnWriteArrayList<>();
+
         for (int i = 0; i < maxCell; i++) {
             for (int j = 0; j < rnd.nextInt(Settings.maxValueRabbit); j++) {
                 herbivoresList.add(new Rabbit(i, rnd.nextInt(width)
-                        , rnd.nextInt(height), Settings.weightRabbit, Settings.speedMoveRabbit, Settings.eatMaxRabbit));
+                        , rnd.nextInt(height), Settings.weightRabbit, Settings.speedMoveRabbit, Settings.eatCount));
             }
         }
+
+        for (int i = 0; i < maxCell; i++) {
+            for (int j = 0; j < rnd.nextInt(Settings.maxValueMouse); j++) {
+                herbivoresList.add(new Mouse(i, rnd.nextInt(width)
+                        , rnd.nextInt(height), Settings.weightMouse, Settings.speedMoveMouse, Settings.eatCount));
+            }
+        }
+
         return herbivoresList;
     }
 

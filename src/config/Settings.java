@@ -1,6 +1,7 @@
 package config;
 
 public class Settings {
+    static int eatCount = 2;
 
     static double weightWolf = 50;
     static int speedMoveWolf = 3;
@@ -58,6 +59,7 @@ public class Settings {
     static int speedMoveMouse = 1;
     static double eatMaxMouse = 0.01;
     static int maxValueMouse = 500;
+    static String mouseIcon = "\uD83D\uDC01";
 
     static double weightSheep = 70;
     static int speedMoveSheep = 3;
@@ -73,6 +75,7 @@ public class Settings {
     static int speedMoveEagle = 3;
     static double eatMaxEagle = 1;
     static int maxValueEagle = 20;
+    static String eagleIcon = "\uD83E\uDD85";
 
     static double weightFox = 8;
     static int speedMoveFox = 2;
