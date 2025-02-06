@@ -1,22 +1,14 @@
 package entity.predators;
 
-import config.MoveDirection;
-import config.Settings;
-import entity.Organism;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Predicate;
-
 public class Wolf extends Predators {
 
-    public Wolf(int cell, int x, int y, double weight, int speedMove, int eatCount) {
-        super.cell = cell;
+    public Wolf(int x, int y,double weight, int speedMove, double eatMax) {
         super.x = x;
         super.y = y;
         super.weight = weight;
         super.speedMove = speedMove;
-        super.eatCount = eatCount;
+        super.eatMax = eatMax;
+
     }
 
     @Override
@@ -24,10 +16,9 @@ public class Wolf extends Predators {
         return "Wolf{" +
                 "x=" + x +
                 ", y=" + y +
-                ", cell=" + cell +
-                ", eatCount=" + eatCount +
+                ", weight=" + weight +
+                ", speedMove=" + speedMove +
+                ", eatMax=" + eatMax +
                 '}';
     }
-
-
 }

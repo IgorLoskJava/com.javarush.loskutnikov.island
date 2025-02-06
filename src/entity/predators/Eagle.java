@@ -1,13 +1,13 @@
 package entity.predators;
 
-public class Eagle extends Predators{
+public class Eagle extends Predators {
 
-    public Eagle(int cell, int x, int y, double weight, int speedMove, int eatCount) {
-        super.cell = cell;
+    public Eagle(int x, int y, double weight, int speedMove, double eatMax) {
         super.x = x;
         super.y = y;
         super.weight = weight;
         super.speedMove = speedMove;
-        super.eatCount = eatCount;
+        super.eatMax = eatMax;
+
     }
 }
