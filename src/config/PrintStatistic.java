@@ -43,6 +43,7 @@ public class PrintStatistic {
                 .filter(organism -> organism.getClass().equals(Caterpillar.class)).count() + Settings.iconCaterpillar + ",");
         System.out.print(grassList.stream()
                 .filter(organism -> organism.getClass().equals(Grass.class)).count() + Settings.iconGrass + ".");
+        System.out.println();
     }
 
 }

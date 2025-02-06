@@ -5,17 +5,16 @@ import entity.herbivores.*;
 import entity.plants.Grass;
 import entity.predators.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CreateWorld {
     static Random rnd = new Random();
-    static List<Organism> predatorList = new CopyOnWriteArrayList<>();
-    static List<Organism> herbivoreList = new CopyOnWriteArrayList<>();
-    static List<Organism> planList = new CopyOnWriteArrayList<>();
 
     public static List<Organism> getPredatorCreate() {
+        List<Organism> predatorList = new ArrayList<>();
         for (int i = 0; i < Settings.maxValueWolf; i++) {
             predatorList.add(new Wolf(rnd.nextInt(Settings.globalX),
                     rnd.nextInt(Settings.globalY), Settings.weightWolf, Settings.speedMoveWolf, Settings.eatMaxWolf));
@@ -44,6 +43,7 @@ public class CreateWorld {
     }
 
     public static List<Organism> getHerbivoreListCreate() {
+        List<Organism> herbivoreList = new ArrayList<>();
         for (int i = 0; i < Settings.maxValueHorse; i++) {
             herbivoreList.add(new Horse(rnd.nextInt(Settings.globalX),
                     rnd.nextInt(Settings.globalY), Settings.weightHorse, Settings.speedMoveHorse, Settings.eatMaxHorse));
@@ -88,6 +88,7 @@ public class CreateWorld {
     }
 
     public static List<Organism> getPlanList(){
+        List<Organism> planList = new ArrayList<>();
         for (int i = 0; i < Settings.maxValueGrass; i++) {
             planList.add(new Grass(rnd.nextInt(Settings.globalX),
                     rnd.nextInt(Settings.globalY)));

@@ -9,4 +9,15 @@ public class Rabbit extends Herbivores {
         super.eatMax = eatMax;
 
     }
+
+    @Override
+    public String toString() {
+        return "Rabbit{" +
+                "x=" + x +
+                ", y=" + y +
+                ", weight=" + weight +
+                ", speedMove=" + speedMove +
+                ", eatMax=" + eatMax +
+                '}';
+    }
 }

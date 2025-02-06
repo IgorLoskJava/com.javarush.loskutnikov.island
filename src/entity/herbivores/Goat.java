@@ -10,4 +10,15 @@ public class Goat extends Herbivores{
         super.eatMax = eatMax;
 
     }
+
+    @Override
+    public String toString() {
+        return "Goat{" +
+                "x=" + x +
+                ", y=" + y +
+                ", weight=" + weight +
+                ", speedMove=" + speedMove +
+                ", eatMax=" + eatMax +
+                '}';
+    }
 }
